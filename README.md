@@ -239,12 +239,6 @@ This project is open source and available under the [MIT License](LICENSE).
 - 🐦 **Twitter:** [@01DMXX](https://twitter.com/01DMXX)
 - 📍 **Location:** Riyadh, Saudi Arabia | الرياض، المملكة العربية السعودية
 
-## 🙏 Acknowledgments | شكر وتقدير
-
-- Next.js team for the amazing framework
-- Tailwind CSS for the utility-first CSS framework
-- Lucide React for the beautiful icons
-- The open-source community for inspiration and tools
 
 ---
 
