@@ -1,119 +1,76 @@
-# Hyperfolio - Next.js Portfolio Clone
+# Portfolio Website | موقع شخصي
 
-A modern, scalable portfolio website clone built with Next.js 15, TypeScript, and Tailwind CSS. This project replicates and enhances the design patterns from https://hyperfolio.framer.website/ with improved functionality, performance, and developer experience.
+[![Next.js](https://img.shields.io/badge/Next.js-15-black?style=flat-square&logo=next.js)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3-38B2AC?style=flat-square&logo=tailwind-css)](https://tailwindcss.com/)
 
-## ✨ Features
+A modern, responsive portfolio website built with Next.js 15, featuring bilingual support (Arabic/English), multiple theme options, and beautiful animations.
 
-### 🎨 Modern Design
-- **Responsive Design**: Mobile-first approach with seamless tablet and desktop experiences
-- **Dark Mode**: System preference detection with manual toggle
-- **Smooth Animations**: CSS-based and React-powered micro-interactions
-- **Clean Typography**: Inter font family for optimal readability
-- **Consistent Spacing**: Design token system for uniform spacing and colors
+موقع شخصي حديث ومتجاوب مبني بـ Next.js 15، يتميز بالدعم ثنائي اللغة (العربية/الإنجليزية)، وخيارات متعددة للمظاهر، وحركات جميلة.
 
-### 🔧 Technical Features
-- **Next.js 15**: Latest App Router with server components and static generation
-- **TypeScript**: Full type safety with comprehensive interfaces
-- **Tailwind CSS v4**: Utility-first styling with custom utilities
-- **Component Architecture**: Modular, reusable components
-- **Error Boundaries**: Graceful error handling and recovery
-- **SEO Optimized**: Meta tags, structured data, and performance optimization
+## 🌟 Live Demo | المعاينة المباشرة
 
-### 🚀 Interactive Components
-- **Global Search**: Search across projects and blog posts with keyboard navigation
-- **Loading States**: Progressive loading indicators and smooth page transitions
-- **Newsletter Integration**: Email subscription with validation and feedback
-- **Contact Forms**: Functional contact form with validation
-- **Scroll Effects**: Parallax scrolling and scroll-to-top functionality
-- **Mobile Navigation**: Responsive hamburger menu with smooth animations
+[**View Live Website**](https://github.com/abdallhx2/portfolio-website) | [**عرض الموقع**](https://github.com/abdallhx2/portfolio-website)
 
-### 📱 Pages & Sections
-- **Home**: Hero section, featured projects, services, statistics, recent blogs
-- **Projects**: Portfolio showcase with filtering by category and detailed project pages
-- **Blog**: Article listing with categories, tags, and individual post pages
-- **About**: Personal story, skills, experience, and achievements
-- **Services**: Service offerings with detailed descriptions
-- **Contact**: Contact form, information, and FAQ section
-- **Shop**: Template marketplace with pricing and features
-- **Bookmarks**: Curated resource collection
+## ✨ Features | المميزات
 
-## 🛠 Tech Stack
+### 🌍 Multilingual Support
+- **Arabic (RTL)** - دعم كامل للغة العربية مع اتجاه النص من اليمين لليسار
+- **English (LTR)** - Full English support with left-to-right text direction
+- Real-time language switching without page reload
 
-### Core Technologies
-- **Framework**: Next.js 15.3.5 with Turbopack
-- **Language**: TypeScript 5.x
-- **Styling**: Tailwind CSS v4 with custom utilities
-- **Font**: Inter (Google Fonts)
-- **Icons**: Lucide React
+### 🎨 Theme System
+- **Dark/Light Mode** - نظام المظهر الداكن والفاتح
+- **5 Color Schemes** - 5 أنظمة ألوان مختلفة (Blue, Purple, Green, Orange, Pink)
+- Instant theme switching with smooth transitions
+- System preference detection
 
-### Development Tools
-- **Package Manager**: npm
-- **Linting**: ESLint with Next.js configuration
-- **Type Checking**: TypeScript compiler
-- **Dev Server**: Next.js development server with fast refresh
+### 📱 Responsive Design
+- Mobile-first approach
+- Optimized for all screen sizes
+- Touch-friendly interactions
+- Progressive enhancement
 
-### Architecture Patterns
-- **Component Composition**: Reusable UI components
-- **Data Management**: Static data with TypeScript interfaces
-- **State Management**: React hooks for local state
-- **Error Handling**: Error boundaries and graceful fallbacks
-- **Performance**: Image optimization, lazy loading, and code splitting
+### ⚡ Performance
+- Next.js 15 with App Router
+- Server-side rendering (SSR)
+- Static site generation (SSG)
+- Optimized images and assets
+- Fast page loads and smooth animations
 
-## 📁 Project Structure
+### 🎭 Animations & Interactions
+- Custom fade-in animations
+- Staggered children animations
+- Smooth transitions and hover effects
+- Hardware-accelerated animations
+- Scroll-triggered animations
 
-```
-src/
-├── app/                    # Next.js App Router pages
-│   ├── globals.css        # Global styles and utilities
-│   ├── layout.tsx         # Root layout with providers
-│   ├── page.tsx           # Home page
-│   ├── projects/          # Projects pages
-│   │   ├── page.tsx       # Projects listing
-│   │   └── [slug]/        # Individual project pages
-│   ├── blog/              # Blog pages
-│   │   ├── page.tsx       # Blog listing
-│   │   └── [slug]/        # Individual blog posts
-│   ├── about/             # About page
-│   ├── services/          # Services page
-│   ├── contact/           # Contact page
-│   ├── shop/              # Shop page
-│   └── bookmark/          # Bookmarks page
-├── components/            # Reusable UI components
-│   ├── Sidebar.tsx        # Navigation sidebar
-│   ├── Footer.tsx         # Site footer
-│   ├── LoadingBar.tsx     # Page transition indicator
-│   ├── ThemeToggle.tsx    # Dark mode toggle
-│   ├── ScrollToTop.tsx    # Scroll to top button
-│   ├── Search.tsx         # Global search component
-│   ├── Newsletter.tsx     # Email subscription
-│   ├── ErrorBoundary.tsx  # Error boundary wrapper
-│   └── Animations.tsx     # Animation utilities
-├── data/                  # Static data and types
-│   ├── projects.ts        # Project data and interfaces
-│   └── blog.ts            # Blog data and interfaces
-└── public/                # Static assets
-    ├── file.svg
-    ├── globe.svg
-    ├── next.svg
-    ├── vercel.svg
-    └── window.svg
-```
+## 🛠️ Technology Stack | التقنيات المستخدمة
 
-## 🚀 Getting Started
+- **Framework:** Next.js 15 (App Router)
+- **Language:** TypeScript 5
+- **Styling:** Tailwind CSS 3
+- **Icons:** Lucide React
+- **Image Optimization:** Next.js Image
+- **Animations:** CSS Transitions + Custom React Hooks
+- **Deployment:** Vercel Ready
 
-### Prerequisites
-- Node.js 18.17 or later
-- npm, yarn, pnpm, or bun
+## 🚀 Getting Started | البداية
 
-### Installation
+### Prerequisites | المتطلبات
 
-1. **Clone the repository**
+- Node.js 18+ 
+- npm, yarn, or pnpm
+
+### Installation | التثبيت
+
+1. **Clone the repository | نسخ المشروع**
    ```bash
-   git clone <repository-url>
-   cd portofilo
+   git clone https://github.com/abdallhx2/portfolio-website.git
+   cd portfolio-website
    ```
 
-2. **Install dependencies**
+2. **Install dependencies | تثبيت المكتبات**
    ```bash
    npm install
    # or
@@ -122,7 +79,7 @@ src/
    pnpm install
    ```
 
-3. **Start the development server**
+3. **Run development server | تشغيل الخادم المحلي**
    ```bash
    npm run dev
    # or
@@ -131,235 +88,147 @@ src/
    pnpm dev
    ```
 
-4. **Open your browser**
-   Navigate to [http://localhost:3000](http://localhost:3000)
+4. **Open in browser | فتح في المتصفح**
+   ```
+   http://localhost:3000
+   ```
 
-### Production Build
+## 📁 Project Structure | هيكل المشروع
+
+```
+src/
+├── app/                    # App Router pages
+│   ├── page.tsx           # Home page
+│   ├── about/             # About page
+│   ├── blog/              # Blog pages
+│   ├── contact/           # Contact page
+│   ├── projects/          # Projects pages
+│   ├── services/          # Services pages
+│   └── shop/              # Shop page
+├── components/            # Reusable components
+│   ├── Animations.tsx     # Animation components
+│   ├── ThemeToggle.tsx   # Theme switcher
+│   ├── Footer.tsx        # Footer component
+│   ├── Sidebar.tsx       # Navigation sidebar
+│   └── ...
+├── context/              # React contexts
+│   ├── LanguageContext.tsx  # Language management
+│   ├── ThemeContext.tsx     # Theme management
+│   └── SidebarContext.tsx   # Sidebar state
+├── data/                 # Static data and translations
+│   ├── me.ts             # Personal information
+│   ├── projects.ts       # Projects data
+│   ├── blog.ts           # Blog posts data
+│   └── colors.ts         # Color schemes
+├── hooks/                # Custom React hooks
+│   ├── useTranslatedData.ts
+│   └── useColorScheme.ts
+├── translations/         # Translation files
+│   └── index.ts
+└── utils/               # Utility functions
+    └── colorUtils.ts
+
+public/
+├── me/                  # Personal images
+├── project/            # Project screenshots
+├── roadmap/           # Roadmap icons
+└── services/          # Service icons
+```
+
+## 🎨 Customization | التخصيص
+
+### Adding New Languages | إضافة لغات جديدة
+
+1. Update `src/translations/index.ts` with new language translations
+2. Add language data to relevant files in `src/data/`
+3. Update the language switcher in the customization section
+
+### Customizing Themes | تخصيص المظاهر
+
+1. Edit `src/data/colors.ts` to add new color schemes
+2. Update CSS variables in `src/app/globals.css`
+3. Test across all components for consistency
+
+### Adding New Sections | إضافة أقسام جديدة
+
+1. Create new components in `src/components/`
+2. Add translations in `src/translations/`
+3. Import and use in relevant pages
+
+## 📚 Available Scripts | الأوامر المتاحة
 
 ```bash
-# Build for production
-npm run build
-
-# Start production server
-npm start
-
-# Export static files (optional)
-npm run export
+npm run dev          # Start development server
+npm run build        # Build for production
+npm run start        # Start production server
+npm run lint         # Run ESLint
+npm run type-check   # TypeScript type checking
 ```
 
-## 📝 Content Management
+## 🌐 Deployment | النشر
 
-### Adding Projects
+### Vercel (Recommended | الموصى به)
 
-Edit `src/data/projects.ts` to add new projects:
+1. Push your code to GitHub
+2. Connect your repository to [Vercel](https://vercel.com)
+3. Deploy automatically with each push
 
-```typescript
-{
-  id: "unique-project-id",
-  title: "Project Title",
-  description: "Brief description",
-  category: "Web Development",
-  technologies: ["Next.js", "TypeScript"],
-  image: "/images/project.jpg",
-  gallery: ["/images/1.jpg", "/images/2.jpg"],
-  liveUrl: "https://example.com",
-  githubUrl: "https://github.com/user/repo",
-  featured: true,
-  year: "2024",
-  client: "Client Name",
-  duration: "3 months",
-  role: "Full Stack Developer",
-  challenges: ["Challenge 1", "Challenge 2"],
-  solutions: ["Solution 1", "Solution 2"],
-  results: ["Result 1", "Result 2"]
-}
-```
-
-### Adding Blog Posts
-
-Edit `src/data/blog.ts` to add new blog posts:
-
-```typescript
-{
-  id: "unique-post-id",
-  title: "Blog Post Title",
-  excerpt: "Brief excerpt",
-  content: "Full markdown content",
-  category: "Technology",
-  tags: ["nextjs", "react"],
-  image: "/images/blog.jpg",
-  author: {
-    name: "Author Name",
-    avatar: "/images/avatar.jpg",
-    bio: "Author bio"
-  },
-  publishedAt: "2024-01-01",
-  readingTime: "5 min read",
-  featured: true,
-  views: 1250,
-  likes: 45
-}
-```
-
-## 🎨 Customization
-
-### Design Tokens
-
-The design system is built with CSS custom properties in `src/app/globals.css`:
-
-```css
-:root {
-  --color-primary: rgb(147 51 234);
-  --color-secondary: rgb(139 92 246);
-  --spacing-unit: 0.25rem;
-  --border-radius: 0.5rem;
-}
-```
-
-### Custom Components
-
-Create new components in `src/components/`:
-
-```typescript
-interface ComponentProps {
-  title: string;
-  description?: string;
-  variant?: 'default' | 'large';
-}
-
-export default function CustomComponent({ 
-  title, 
-  description, 
-  variant = 'default' 
-}: ComponentProps) {
-  return (
-    <div className={`component ${variant}`}>
-      <h2>{title}</h2>
-      {description && <p>{description}</p>}
-    </div>
-  );
-}
-```
-
-### Animations
-
-Use the animation utilities from `src/components/Animations.tsx`:
-
-```jsx
-import { FadeIn, CountUp, StaggerChildren } from '@/components/Animations';
-
-<FadeIn direction="up" delay={0.2}>
-  <h2>Animated Title</h2>
-</FadeIn>
-
-<CountUp end={100} suffix="+" duration={2} />
-
-<StaggerChildren staggerDelay={0.1}>
-  <div>Item 1</div>
-  <div>Item 2</div>
-  <div>Item 3</div>
-</StaggerChildren>
-```
-
-## 🔧 Development
-
-### Available Scripts
-
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run start` - Start production server
-- `npm run lint` - Run ESLint
-- `npm run type-check` - Run TypeScript compiler
-
-### Code Style
-
-- Use TypeScript for all components and utilities
-- Follow component composition patterns
-- Implement proper error boundaries
-- Use semantic HTML elements
-- Ensure accessibility compliance
-- Write descriptive commit messages
-
-### Performance Best Practices
-
-- Use Next.js Image component for optimized images
-- Implement lazy loading for components below the fold
-- Minimize bundle size with dynamic imports
-- Use proper caching strategies
-- Optimize Web Vitals (LCP, FID, CLS)
-
-## 🚀 Deployment
-
-### Vercel (Recommended)
-
-1. Connect your GitHub repository to Vercel
-2. Configure environment variables if needed
-3. Deploy automatically on push to main branch
-
-### Netlify
-
-1. Build command: `npm run build`
-2. Publish directory: `out` (if using static export)
-3. Set up continuous deployment
-
-### Self-Hosting
+### Manual Deployment | النشر اليدوي
 
 1. Build the project: `npm run build`
-2. Copy `.next` folder to your server
-3. Install dependencies: `npm ci --production`
-4. Start with: `npm start`
+2. Deploy the generated files
 
-## 🔮 Future Enhancements
+## 📱 Browser Support | دعم المتصفحات
 
-### Planned Features
-- [ ] **CMS Integration**: Headless CMS for dynamic content management
-- [ ] **E-commerce**: Shopping cart and payment integration for template sales
-- [ ] **Authentication**: User accounts and personalized experiences
-- [ ] **Analytics**: Custom analytics dashboard and visitor insights
-- [ ] **Performance Monitoring**: Real-time performance metrics
-- [ ] **Advanced Search**: Full-text search with filters and sorting
-- [ ] **Comments System**: Blog post comments and engagement features
-- [ ] **Social Integration**: Social media sharing and OAuth login
+- ✅ Chrome 80+
+- ✅ Firefox 80+
+- ✅ Safari 14+
+- ✅ Edge 80+
 
-### Technical Improvements
-- [ ] **Testing Suite**: Unit, integration, and E2E tests
-- [ ] **CI/CD Pipeline**: Automated testing and deployment
-- [ ] **Database Integration**: PostgreSQL/MongoDB for dynamic data
-- [ ] **API Routes**: Backend API for forms and dynamic features
-- [ ] **Internationalization**: Multi-language support
-- [ ] **PWA Features**: Service workers and offline functionality
-- [ ] **Advanced Caching**: Redis caching and ISR optimization
+## 🤝 Contributing | المساهمة
 
-## 📄 License
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
+المساهمات مرحب بها! لا تتردد في إرسال Pull Request.
 
 1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## 💬 Support
+## 📄 License | الرخصة
 
-If you have any questions or need help, please:
+This project is open source and available under the [MIT License](LICENSE).
 
-- Open an issue on GitHub
-- Email: hello@pentaclay.com
-- Twitter: @yourhandle
+هذا المشروع مفتوح المصدر ومتاح تحت [رخصة MIT](LICENSE).
 
-## 🙏 Acknowledgments
+## 📞 Contact | التواصل
 
-- Original design inspiration from [Hyperfolio](https://hyperfolio.framer.website/)
+**Abdullah Alhasani | عبدالله الحساني**
+
+- 🌐 **GitHub:** [@abdallhx2](https://github.com/abdallhx2)
+- 📧 **Email:** [Contact via GitHub]
+- 🐦 **Twitter:** [@01DMXX](https://twitter.com/01DMXX)
+- 📍 **Location:** Riyadh, Saudi Arabia | الرياض، المملكة العربية السعودية
+
+## 🙏 Acknowledgments | شكر وتقدير
+
 - Next.js team for the amazing framework
-- Tailwind CSS team for the utility-first CSS framework
-- Lucide team for the beautiful icon library
-- Vercel for hosting and deployment platform
+- Tailwind CSS for the utility-first CSS framework
+- Lucide React for the beautiful icons
+- The open-source community for inspiration and tools
 
 ---
 
-**Built with ❤️ using Next.js, TypeScript, and Tailwind CSS**
+<div align="center">
+  <p><strong>Made with ❤️ by Abdullah Alhasani</strong></p>
+  <p><strong>صنع بـ ❤️ بواسطة عبدالله الحساني</strong></p>
+  
+  <p>
+    <a href="https://github.com/abdallhx2/portfolio-website">⭐ Star this repository if you found it helpful!</a>
+  </p>
+  <p>
+    <a href="https://github.com/abdallhx2/portfolio-website">⭐ ضع نجمة للمشروع إذا كان مفيداً!</a>
+  </p>
+</div>
