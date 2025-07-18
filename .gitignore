@@ -39,3 +39,13 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# additional ignores
+node_modules_old/
+.claude/
+.vscode/
+.idea/
+nul
+*.swp
+*.swo
+Thumbs.db
