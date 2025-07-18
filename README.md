@@ -137,6 +137,33 @@ public/
 
 ## 🎨 Customization | التخصيص
 
+### Updating Personal Information | تحديث المعلومات الشخصية
+
+**Quick Setup | الإعداد السريع:**
+
+1. **Personal Info | المعلومات الشخصية**: Edit `src/data/me.ts` and `src/data/me-translations.ts`
+   ```typescript
+   // Update your name, title, bio, contact info, and social links
+   // حدث اسمك، المسمى الوظيفي، النبذة، معلومات التواصل، والروابط الاجتماعية
+   ```
+
+2. **Projects | المشاريع**: Edit `src/data/projects.ts` and `src/data/projects-translations.ts`
+   ```typescript
+   // Add your projects with images, descriptions, and links
+   // أضف مشاريعك مع الصور والأوصاف والروابط
+   ```
+
+3. **Blog Posts | المقالات**: Edit `src/data/blog.ts` and `src/data/blog-translations.ts`
+   ```typescript
+   // Add your blog posts and articles
+   // أضف مقالاتك ومنشوراتك
+   ```
+
+4. **Images | الصور**: Replace images in `public/` folders:
+   - `public/me/` - Personal photos
+   - `public/project/` - Project screenshots
+   - `public/services/` - Service icons
+
 ### Adding New Languages | إضافة لغات جديدة
 
 1. Update `src/translations/index.ts` with new language translations
@@ -205,7 +232,7 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## 📞 Contact | التواصل
 
-**Abdullah Alhasani | عبدالله الحساني**
+**Abdullah Alhasani | عبدالله الحسني**
 
 - 🌐 **GitHub:** [@abdallhx2](https://github.com/abdallhx2)
 - 📧 **Email:** [Contact via GitHub]
@@ -223,7 +250,7 @@ This project is open source and available under the [MIT License](LICENSE).
 
 <div align="center">
   <p><strong>Made with ❤️ by Abdullah Alhasani</strong></p>
-  <p><strong>صنع بـ ❤️ بواسطة عبدالله الحساني</strong></p>
+  <p><strong>صنع بـ ❤️ بواسطة عبدالله الحسني</strong></p>
   
   <p>
     <a href="https://github.com/abdallhx2/portfolio-website">⭐ Star this repository if you found it helpful!</a>
