@@ -410,28 +410,42 @@ NEXT_PUBLIC_ANALYTICS_ID=your-analytics-id
 
 ## 📱 Browser Support | دعم المتصفحات
 
-- ✅ Chrome 80+
-- ✅ Firefox 80+
-- ✅ Safari 14+
-- ✅ Edge 80+
+This portfolio is tested and optimized for modern browsers:
+تم اختبار وتحسين هذا الموقع الشخصي للمتصفحات الحديثة:
 
-## 🤝 Contributing | المساهمة
+| Browser | Version | Status | الحالة |
+|---------|---------|--------|---------|
+| 🌐 **Chrome** | 80+ | ✅ Fully Supported | مدعوم بالكامل |
+| 🦊 **Firefox** | 80+ | ✅ Fully Supported | مدعوم بالكامل |
+| 🧭 **Safari** | 14+ | ✅ Fully Supported | مدعوم بالكامل |
+| 🔷 **Edge** | 80+ | ✅ Fully Supported | مدعوم بالكامل |
+| 📱 **Mobile Browsers** | Latest | ✅ Optimized | محسن |
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+### **🔧 Compatibility Features | ميزات التوافق**
 
-المساهمات مرحب بها! لا تتردد في إرسال Pull Request.
+- **Progressive Enhancement** - Works on older browsers with graceful degradation
+- **Responsive Design** - Adapts to all screen sizes and orientations  
+- **Touch Support** - Optimized for touch devices and mobile interaction
+- **Accessibility** - Meets WCAG guidelines for inclusive design
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+> **Note:** While the site works on older browsers, the best experience is on modern browsers that support CSS Grid, Flexbox, and ES6+ features.
+> ملاحظة: رغم أن الموقع يعمل على المتصفحات الأقدم، التجربة الأفضل تكون على المتصفحات الحديثة التي تدعم CSS Grid و Flexbox وميزات ES6+.
 
 ## 📄 License | الرخصة
 
 This project is open source and available under the [MIT License](LICENSE).
 
 هذا المشروع مفتوح المصدر ومتاح تحت [رخصة MIT](LICENSE).
+
+### **⚖️ What this means | ماذا يعني هذا**
+
+- ✅ **Free to use** - Use for personal and commercial projects | استخدم للمشاريع الشخصية والتجارية
+- ✅ **Modify freely** - Customize as needed | عدّل حسب الحاجة  
+- ✅ **Share and distribute** - Share with others | شارك مع الآخرين
+- ✅ **No warranty** - Use at your own risk | بدون ضمان - الاستخدام على مسؤوليتك
+
+> Please consider starring ⭐ the repository if you use this project!
+> يرجى النظر في وضع نجمة ⭐ للمستودع إذا استخدمت هذا المشروع!
 
 ## 📞 Contact & Support | التواصل والدعم
 
