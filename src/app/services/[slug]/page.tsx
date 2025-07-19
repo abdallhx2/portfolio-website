@@ -6,19 +6,33 @@ import { ArrowLeft, CheckCircle, Mail, Phone } from 'lucide-react';
 import { FadeIn, StaggerChildren } from '@/components/Animations';
 import { useLanguage } from '@/context/LanguageContext';
 import { useTranslatedData } from '@/hooks/useTranslatedData';
+import { useEffect, useState } from 'react';
 
 interface ServicePageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 export default function ServicePage({ params }: ServicePageProps) {
   const { t, isRTL } = useLanguage();
   const { services } = useTranslatedData();
+  const [slug, setSlug] = useState<string>('');
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    params.then(({ slug }) => {
+      setSlug(slug);
+      setIsLoading(false);
+    });
+  }, [params]);
+
+  if (isLoading) {
+    return <div>Loading...</div>; // You can replace this with a proper loading component
+  }
   
   // Find service by matching the href
-  const service = services.find(s => s.href === `/services/${params.slug}`);
+  const service = services.find(s => s.href === `/services/${slug}`);
 
   if (!service) {
     notFound();
