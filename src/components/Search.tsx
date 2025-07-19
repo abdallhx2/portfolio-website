@@ -1,9 +1,10 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
 import { Search as SearchIcon, X } from 'lucide-react';
-import { projects, Project } from '@/data/projects';
-import { blogPosts, BlogPost } from '@/data/blog';
+import { projects } from '@/data/projects';
+import { blogPosts } from '@/data/blog';
 import Link from 'next/link';
 
 interface SearchResult {
