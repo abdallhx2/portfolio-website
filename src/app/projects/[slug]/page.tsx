@@ -4,19 +4,22 @@ import { notFound } from 'next/navigation';
 import ProjectPageClient from './ProjectPageClient';
 
 interface ProjectPageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
-export default function ProjectPage({ params }: ProjectPageProps) {
+export default async function ProjectPage({ params }: ProjectPageProps) {
+  // Await the params promise
+  const { slug } = await params;
+  
   // Get all projects from both languages to find the project
   const allProjectsEn = projectsTranslations.en;
   const allProjectsAr = projectsTranslations.ar;
   
   // Find the project in either language
-  const project = allProjectsEn.find(p => p.id === params.slug) || 
-                  allProjectsAr.find(p => p.id === params.slug);
+  const project = allProjectsEn.find(p => p.id === slug) || 
+                  allProjectsAr.find(p => p.id === slug);
 
   if (!project) {
     notFound();
