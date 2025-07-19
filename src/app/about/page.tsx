@@ -5,7 +5,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowLeft, Code, Database, Smartphone, Settings, Palette, Monitor } from 'lucide-react';
-import { FadeIn, StaggerChildren, CountUp } from '@/components/Animations';
+import { FadeIn, StaggerChildren } from '@/components/Animations';
 import { useLanguage } from '@/context/LanguageContext';
 import { useTranslatedData } from '@/hooks/useTranslatedData';
 
