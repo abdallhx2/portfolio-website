@@ -7,14 +7,27 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeHighlight from 'rehype-highlight';
 import 'highlight.js/styles/github-dark.css';
-import { blogPosts } from '@/data/blog';
-import Newsletter from '@/components/Newsletter';
 import { FadeIn, StaggerChildren } from '@/components/Animations';
 import { useLanguage } from '@/context/LanguageContext';
 import { useTranslatedData } from '@/hooks/useTranslatedData';
 
+interface BlogPost {
+  id: string;
+  slug: string;
+  title: string;
+  excerpt: string;
+  content: string;
+  category: string;
+  tags: string[];
+  author: string | { name: string };
+  publishedAt: string;
+  readingTime?: string;
+  readTime?: number;
+  image?: string;
+}
+
 interface BlogPostClientProps {
-  post: any;
+  post: BlogPost;
 }
 
 export default function BlogPostClient({ post }: BlogPostClientProps) {

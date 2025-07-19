@@ -2,8 +2,8 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { Search as SearchIcon, X } from 'lucide-react';
-import { projects } from '@/data/projects';
-import { blogPosts } from '@/data/blog';
+import { projects, Project } from '@/data/projects';
+import { blogPosts, BlogPost } from '@/data/blog';
 import Link from 'next/link';
 
 interface SearchResult {
@@ -52,7 +52,7 @@ export default function Search({ isOpen, onClose }: SearchProps) {
           type: 'project',
           title: project.title,
           description: project.description,
-          url: `/projects/${project.slug}`,
+          url: `/projects/${(project as any).slug || project.id}`,
           category: project.category,
         });
       }
@@ -70,7 +70,7 @@ export default function Search({ isOpen, onClose }: SearchProps) {
           type: 'blog',
           title: post.title,
           description: post.excerpt,
-          url: `/blog/${post.slug}`,
+          url: `/blog/${(post as any).slug || post.id}`,
           category: post.category,
         });
       }

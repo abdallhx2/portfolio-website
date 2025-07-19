@@ -1,6 +1,5 @@
 'use client';
 
-import Link from 'next/link';
 import { Github, Linkedin, Twitter, Instagram } from 'lucide-react';
 import { useTranslatedData } from '@/hooks/useTranslatedData';
 import { useLanguage } from '@/context/LanguageContext';

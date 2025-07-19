@@ -241,9 +241,8 @@ export default function BookmarkPage() {
                   style={{
                     border: '1px solid var(--border-color)',
                     backgroundColor: 'var(--surface)',
-                    color: 'var(--text-primary)',
-                    '--tw-ring-color': 'var(--accent-primary)'
-                  }}
+                    color: 'var(--text-primary)'
+                  } as React.CSSProperties}
                 />
                 <button className="btn-primary whitespace-nowrap">
                   Subscribe

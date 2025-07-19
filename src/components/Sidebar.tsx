@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { 
   Home, 
@@ -126,9 +127,11 @@ export default function Sidebar() {
               onClick={() => setIsMobileMenuOpen(false)}
             >
               <div className="relative">
-                <img
+                <Image
                   src="/me/1.png"
                   alt={personalInfo.name}
+                  width={56}
+                  height={56}
                   className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 rounded-lg sm:rounded-xl object-cover shadow-lg transform group-hover:scale-105 transition-transform duration-200"
                 />
               </div>
@@ -164,9 +167,11 @@ export default function Sidebar() {
                 title={personalInfo.name}
               >
                 <div className="relative">
-                  <img
+                  <Image
                     src="/me/1.png"
                     alt={personalInfo.name}
+                    width={40}
+                    height={40}
                     className="w-10 h-10 rounded-lg object-cover shadow-lg transform group-hover:scale-105 transition-transform duration-200"
                   />
                   <div className={`absolute -bottom-1 -right-1 w-3 h-3 rounded-full border-2 border-white ${personalInfo.available ? 'bg-emerald-500' : 'bg-red-500'}`}></div>

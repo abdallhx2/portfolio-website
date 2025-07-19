@@ -5,13 +5,16 @@ export interface BlogPostTranslation {
   title: string;
   excerpt: string;
   content: string;
-  author: string;
+  author: string | { name: string };
   publishedAt: string;
   updatedAt?: string;
   category: string;
   tags: string[];
   image: string;
   readTime: number; // in minutes
+  readingTime?: string;
+  views?: number;
+  likes?: number;
   featured: boolean;
   slug: string;
 }

@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { ArrowLeft, Clock, Heart, Eye, Filter } from 'lucide-react';
-import { FadeIn, StaggerChildren } from '@/components/Animations';
+import { FadeIn } from '@/components/Animations';
 import { useLanguage } from '@/context/LanguageContext';
 import { useTranslatedData } from '@/hooks/useTranslatedData';
 

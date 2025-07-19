@@ -12,7 +12,7 @@ import { useTranslatedData } from '@/hooks/useTranslatedData';
 export default function AboutPage() {
   const [hoveredElement, setHoveredElement] = useState<string | null>(null);
   const { t, isRTL } = useLanguage();
-  const { personalInfo, experiences, statistics } = useTranslatedData();
+  const { personalInfo } = useTranslatedData();
   
   // Process steps with animations
   const processSteps = [

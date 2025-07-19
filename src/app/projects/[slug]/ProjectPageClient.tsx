@@ -9,8 +9,34 @@ import { FadeIn, StaggerChildren } from '@/components/Animations';
 import { useLanguage } from '@/context/LanguageContext';
 import { useTranslatedData } from '@/hooks/useTranslatedData';
 
+interface Project {
+  id: string;
+  slug?: string;
+  title: string;
+  description: string;
+  longDescription?: string;
+  shortDescription?: string;
+  technologies: string[];
+  category: string;
+  image: string;
+  githubUrl?: string;
+  github?: string;
+  liveUrl?: string;
+  url?: string;
+  features?: string[];
+  challenges?: string;
+  challenge?: string;
+  solution?: string;
+  outcome?: string;
+  result?: string;
+  year?: string | number;
+  client?: string;
+  duration?: string;
+  gallery?: string[];
+}
+
 interface ProjectPageClientProps {
-  project: any;
+  project: Project;
 }
 
 export default function ProjectPageClient({ project }: ProjectPageClientProps) {
