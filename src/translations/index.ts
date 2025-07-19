@@ -411,7 +411,6 @@ export interface Translations {
     };
   };
 
-  // Error pages
   error: {
     notFound: string;
     notFoundDesc: string;
