@@ -205,24 +205,7 @@ npm run type-check   # TypeScript type checking
 1. Build the project: `npm run build`
 2. Deploy the generated files
 
-## 📱 Browser Support | دعم المتصفحات
 
-- ✅ Chrome 80+
-- ✅ Firefox 80+
-- ✅ Safari 14+
-- ✅ Edge 80+
-
-## 🤝 Contributing | المساهمة
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-المساهمات مرحب بها! لا تتردد في إرسال Pull Request.
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
 
 ## 📄 License | الرخصة
 
