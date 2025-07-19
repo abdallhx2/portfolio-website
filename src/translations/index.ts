@@ -207,8 +207,43 @@ export interface Translations {
     journeyTitle: string;
     journeyDesc: string;
     skillsTitle: string;
+    skillsCategories: {
+      frontend: string;
+      mobile: string;
+      backend: string;
+      design: string;
+    };
+    skillsStats: {
+      projects: string;
+      years: string;
+      downloads: string;
+    };
+    skillsTools: {
+      figma: string;
+      adobeXd: string;
+      sketch: string;
+      prototyping: string;
+      userResearch: string;
+    };
+    skillsDescription: {
+      nextjs: string;
+      typescript: string;
+      flutter: string;
+      firebase: string;
+      projectManagement: string;
+      uiux: string;
+    };
+    skillsSummary: {
+      title: string;
+      description: string;
+      experienceYears: string;
+      projectsCompleted: string;
+      technologiesMastered: string;
+    };
     ctaTitle: string;
     ctaDesc: string;
+    ctaContact?: string;
+    ctaProjects?: string;
     process: {
       discovery: string;
       discoveryDesc: string;
@@ -649,8 +684,43 @@ processDesc: 'My methodology is simple, but built on depth and experience. I ble
       journeyTitle: 'Professional Experience',
       journeyDesc: 'My professional journey in software development, spanning mobile applications, web development, and technical project management.',
       skillsTitle: 'Technical Skills & Tools',
+      skillsCategories: {
+        frontend: 'Frontend Development',
+        mobile: 'Mobile Development', 
+        backend: 'Backend & Database',
+        design: 'Design & UI/UX'
+      },
+      skillsStats: {
+        projects: 'Projects',
+        years: 'Years',
+        downloads: 'Downloads'
+      },
+      skillsTools: {
+        figma: 'Figma',
+        adobeXd: 'Adobe XD',
+        sketch: 'Sketch',
+        prototyping: 'Prototyping',
+        userResearch: 'User Research'
+      },
+      skillsDescription: {
+        nextjs: 'Modern web applications with SSR/SSG',
+        typescript: 'Type-safe JavaScript development',
+        flutter: 'Cross-platform mobile applications with native performance',
+        firebase: 'Real-time database and cloud functions',
+        projectManagement: 'Agile methodologies and team leadership',
+        uiux: 'User-centered design with modern aesthetics and optimal user experience'
+      },
+      skillsSummary: {
+        title: 'Ready to Collaborate?',
+        description: 'With expertise across the full development stack, I\'m equipped to handle projects from conception to deployment.',
+        experienceYears: 'Years Experience',
+        projectsCompleted: 'Projects Completed',
+        technologiesMastered: 'Technologies Mastered'
+      },
       ctaTitle: 'Let\'s Build Something Amazing Together',
       ctaDesc: 'Ready to turn your ideas into reality? Let\'s discuss your project and create innovative solutions that drive results.',
+      ctaContact: 'Get In Touch',
+      ctaProjects: 'View Projects',
       process: {
        discovery: 'Discovery & Vision Crafting',
     discoveryDesc: 'I understand your project\'s nature, goals, and the audience you want to reach. I research, ask, analyze... and craft a technical vision that serves your purpose from the start. If the idea is floating, we ground it in reality. If it\'s ready, we move forward with confidence.',
@@ -664,7 +734,7 @@ processDesc: 'My methodology is simple, but built on depth and experience. I ble
     },
     projects: {
       title: 'My Projects',
-      description: 'A showcase of projects that demonstrate technical expertise, creative problem-solving, and innovative solutions across various domains.',
+      description: 'My ideas lab where thoughts transform into code series that make an impact by intelligently solving technical problems, and empowering developers and beginners to overcome obstacles. I created this collection to be a reference that everyone can benefit from. Because knowledge that isn\'t shared... is lost.',
       filterBy: 'Filter by category:',
       categories: {
         all: 'All',
@@ -1064,8 +1134,43 @@ processDesc: 'طريقتي تبدأ من فهم عميق وتنتهي بنتيج
       journeyTitle: 'الخبرة المهنية',
       journeyDesc: 'رحلتي المهنية في تطوير البرمجيات، تشمل تطبيقات الهاتف المحمول وتطوير الويب وإدارة المشاريع التقنية.',
       skillsTitle: 'المهارات التقنية والأدوات',
+      skillsCategories: {
+        frontend: 'تطوير الواجهة الأمامية',
+        mobile: 'تطوير الهاتف المحمول',
+        backend: 'الخادم وقواعد البيانات',
+        design: 'التصميم وتجربة المستخدم'
+      },
+      skillsStats: {
+        projects: 'مشاريع',
+        years: 'سنوات',
+        downloads: 'تحميلات'
+      },
+      skillsTools: {
+        figma: 'فيجما',
+        adobeXd: 'أدوبي إكس دي',
+        sketch: 'سكتش',
+        prototyping: 'النماذج الأولية',
+        userResearch: 'بحث المستخدم'
+      },
+      skillsDescription: {
+        nextjs: 'تطبيقات ويب حديثة مع SSR/SSG',
+        typescript: 'تطوير جافاسكريبت آمن الأنواع',
+        flutter: 'تطبيقات متعددة المنصات بأداء محلي',
+        firebase: 'قاعدة بيانات فورية ووظائف سحابية',
+        projectManagement: 'منهجيات أجايل وقيادة الفرق',
+        uiux: 'تصميم محوره المستخدم مع جماليات حديثة وتجربة مستخدم مثلى'
+      },
+      skillsSummary: {
+        title: 'مستعد للتعاون؟',
+        description: 'مع الخبرة عبر المكدس التطويري الكامل، أنا مجهز للتعامل مع المشاريع من الفكرة إلى النشر.',
+        experienceYears: 'سنوات الخبرة',
+        projectsCompleted: 'المشاريع المكتملة',
+        technologiesMastered: 'التقنيات المتقنة'
+      },
       ctaTitle: 'لنبني شيئاً مذهلاً معاً',
       ctaDesc: 'مستعد لتحويل أفكارك إلى واقع؟ لنناقش مشروعك وننشئ حلولاً مبتكرة تحقق النتائج.',
+      ctaContact: 'تواصل معي',
+      ctaProjects: 'شاهد المشاريع',
       process: {
         discovery: 'الاستكشاف وصياغة الرؤية',
         discoveryDesc: 'أفهم طبيعة مشروعك، أهدافك، والجمهور اللي تبغى توصله.  أبحث، أسأل، أحلل... وأصيغ رؤية تقنية تخدم هدفك من البداية. إذا كانت الفكرة عائمة، نربطها بواقع، وإذا كانت جاهزة، نمشي فيها بثقة.',
@@ -1079,7 +1184,7 @@ processDesc: 'طريقتي تبدأ من فهم عميق وتنتهي بنتيج
     },
     projects: {
       title: 'مشاريعي',
-description: 'مجموعة من المشاريع اللي جمعت بين التفكير التقني والتطبيق الذكي — حلول صنعت الفرق في مجالات مختلفة.',
+description: 'مختبر أفكاري حيث تتحول الافكار الى سلسلة كود تُحدث تأثيرًا  بحل مشاكل تقنية بذكاء، وتمكين المطورين والمبتدئين من تجاوز العقبات. هذه المجموعة صنعتُها لتكون مرجعًا يستفيد منه الجميع. لأن المعرفة التي لا تُشارك.. ضائعة.',
       filterBy: 'تصفية حسب الفئة:',
       categories: {
         all: 'الكل',
@@ -1125,7 +1230,7 @@ description: 'خدمات مبنية على فهم، مدعومة بتقنيات 
     },
     blog: {
       title: 'مقالات المدونة',
-      description: 'رؤى ودروس وأفكار حول التصميم والتطوير والتكنولوجيا.',
+      description: 'أفكار ملهمة ودروس مُجرَّبة حول التكنولوجيا، والبرمجة والذكاء الاصطناعي.',
       categories: {
         all: 'الكل',
         design: 'تصميم',

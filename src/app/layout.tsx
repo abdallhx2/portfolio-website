@@ -9,6 +9,7 @@ import ErrorBoundary from "@/components/ErrorBoundary";
 import ClientThemeProvider from "@/components/ClientThemeProvider";
 import LayoutWrapper from "@/components/LayoutWrapper";
 import { SidebarProvider } from "@/context/SidebarContext";
+import { Analytics } from "@vercel/analytics/next"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -29,6 +30,11 @@ export const metadata: Metadata = {
   title: "Abdullah Space",
   description: "",
   authors: [{ name: "Abdullah" }],
+  icons: {
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
+  },
   openGraph: {
     title: "Abdullah Space",
     description: "",
@@ -45,6 +51,7 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <body className={`${inter.variable} ${sourceCodePro.variable} ${cairo.variable} font-sans antialiased`} style={{ backgroundColor: 'var(--background)' }}>
         <ClientThemeProvider>
+           <Analytics/>
           <LoadingScreen />
           <LanguageLoadingScreen />
           <SidebarProvider>

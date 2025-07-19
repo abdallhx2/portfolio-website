@@ -1,6 +1,7 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { LucideIcon } from 'lucide-react';
 
 interface FadeInProps {
@@ -58,7 +59,7 @@ interface CountUpProps {
   className?: string;
 }
 
-export function CountUp({ end, duration = 1.5, suffix = '', className = '' }: CountUpProps) {
+export function CountUp({ end, duration = 3.5, suffix = '', className = '' }: CountUpProps) {
   const ref = useRef<HTMLSpanElement>(null);
   const [hasAnimated, setHasAnimated] = useState(false);
 
@@ -73,34 +74,18 @@ export function CountUp({ end, duration = 1.5, suffix = '', className = '' }: Co
 
             setHasAnimated(true);
 
-            // Add initial glow effect
-            element.style.transition = 'all 0.3s ease';
-            element.style.textShadow = '0 0 10px rgba(var(--primary-rgb), 0.5)';
-
             const updateCount = () => {
               const now = Date.now();
               const progress = Math.min((now - startTime) / (endTime - startTime), 1);
               
-              // Use smooth easing function
-              const easeOutQuart = 1 - Math.pow(1 - progress, 4);
-              const currentCount = Math.floor(easeOutQuart * end);
+              // Use slower easing function for longer animation
+              const easeOutCubic = 1 - Math.pow(1 - progress, 3);
+              const currentCount = Math.floor(easeOutCubic * end);
               
               element.textContent = `${currentCount}${suffix}`;
 
-              // Add dynamic color based on progress
-              const intensity = Math.sin(progress * Math.PI) * 0.3 + 0.7;
-              element.style.color = `rgba(var(--primary-rgb), ${intensity})`;
-
               if (progress < 1) {
                 requestAnimationFrame(updateCount);
-              } else {
-                // Reset to normal color and add completion effect
-                element.style.color = 'var(--foreground)';
-                element.style.textShadow = 'none';
-                element.style.animation = 'gentle-bounce 0.6s ease-out';
-                setTimeout(() => {
-                  element.style.animation = '';
-                }, 600);
               }
             };
 
@@ -121,8 +106,7 @@ export function CountUp({ end, duration = 1.5, suffix = '', className = '' }: Co
   return (
     <span 
       ref={ref} 
-      className={`${className} will-change-transform font-mono tabular-nums`}
-      style={{ display: 'inline-block' }}
+      className={`${className} font-mono tabular-nums`}
     >
       0{suffix}
     </span>
@@ -130,7 +114,7 @@ export function CountUp({ end, duration = 1.5, suffix = '', className = '' }: Co
 }
 
 interface ScrollingTechStackProps {
-  techStack: Array<{ name: string; icon: LucideIcon }>;
+  techStack: Array<{ name: string; icon: LucideIcon | React.ComponentType }>;
   speed?: number;
   direction?: 'left' | 'right';
   className?: string;
@@ -139,30 +123,36 @@ interface ScrollingTechStackProps {
 
 export function ScrollingTechStack({ 
   techStack, 
-  speed = 25, 
+  speed = 30, 
   direction = 'right',
-  className = '',
-  isRTL = true
+  className = ''
 }: ScrollingTechStackProps) {
-  const duplicatedStack = [...techStack, ...techStack, ...techStack];
+  // Create infinite copies for seamless loop
+  const infiniteStack = [...techStack, ...techStack, ...techStack, ...techStack];
 
   return (
-    <div className={`overflow-hidden tech-stack-container ${isRTL ? 'tech-stack-rtl' : 'tech-stack-ltr'} ${className}`}>
+    <div className={`overflow-hidden relative ${className}`} style={{ maskImage: 'linear-gradient(90deg, transparent 0%, black 10%, black 90%, transparent 100%)' }}>
       <div 
-        className={`flex items-center will-change-transform ${direction === 'right' ? 'space-x-reverse space-x-4' : 'space-x-4'}`}
+        className="flex items-center gap-4 will-change-transform"
         style={{ 
-          animation: `scroll-${direction} ${speed}s linear infinite`,
+          animation: `scroll-infinite-${direction} ${speed}s linear infinite`,
           width: 'max-content'
         }}
       >
-        {duplicatedStack.map((tech, index) => (
+        {infiniteStack.map((tech, index) => (
           <div 
-            key={index} 
-            className={`flex items-center px-4 py-2 rounded border text-sm whitespace-nowrap hover:scale-105 transition-all duration-300 hover:shadow-lg group ${direction === 'right' ? 'space-x-reverse space-x-2' : 'space-x-2'}`}
-            style={{ backgroundColor: 'var(--card)', borderColor: 'var(--border)', color: 'var(--foreground)' }}
+            key={`${tech.name}-${index}`}
+            className="flex items-center gap-2 px-3 py-2 rounded-lg border text-sm whitespace-nowrap min-w-max"
+            style={{ 
+              backgroundColor: 'var(--card)', 
+              borderColor: 'var(--border)', 
+              color: 'var(--foreground)'
+            }}
           >
-            <tech.icon size={16} className="group-hover:animate-gentle-bounce" />
-            <span className="group-hover:font-semibold transition-all duration-300">{tech.name}</span>
+            <div className="flex-shrink-0">
+              {React.createElement(tech.icon as any, { size: 14, style: { color: 'var(--primary)' } })}
+            </div>
+            <span className="font-medium">{tech.name}</span>
           </div>
         ))}
       </div>

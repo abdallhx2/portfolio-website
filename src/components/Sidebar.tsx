@@ -82,7 +82,7 @@ export default function Sidebar() {
             : 'transform -translate-x-full opacity-0 lg:translate-x-0 lg:opacity-100'
         } ${
           isSidebarCollapsed && !isMobileMenuOpen 
-            ? 'lg:w-16 xl:w-20' 
+            ? 'lg:w-14 xl:w-16' 
             : 'lg:w-80 xl:w-84 2xl:w-96'
         }`} 
         style={{ 
@@ -90,11 +90,13 @@ export default function Sidebar() {
           borderColor: 'var(--border)'
         }}
       >
-        <div className="flex flex-col h-full p-3 sm:p-4 lg:p-6 relative">
+        <div className="flex flex-col h-full p-2 sm:p-4 lg:p-3 relative">
           {/* Collapse Button - Positioned inside on the right edge */}
           <button
             onClick={() => setIsSidebarCollapsed(!isSidebarCollapsed)}
-            className="hidden lg:flex absolute top-1/2 -translate-y-1/2 right-2 z-10 w-8 h-8 rounded-full shadow-lg items-center justify-center transition-all duration-300 hover:scale-110 border"
+            className={`hidden lg:flex absolute top-4 z-10 w-7 h-7 rounded-full shadow-lg items-center justify-center transition-all duration-300 hover:scale-110 border ${
+              isSidebarCollapsed ? 'right-1.5' : 'right-2'
+            }`}
             style={{ 
               backgroundColor: 'var(--card-bg)', 
               color: 'var(--foreground)',
@@ -110,7 +112,7 @@ export default function Sidebar() {
               e.currentTarget.style.color = 'var(--foreground)';
               e.currentTarget.style.borderColor = 'var(--border)';
             }}
-            title={isSidebarCollapsed ? (language === 'ar' ? 'توسيع الشريط الجانبي' : 'Expand Sidebar') : (language === 'ar' ? 'طي الشريط الجانبي' : 'Collapse Sidebar')}
+            title={isSidebarCollapsed ? 'Expand Sidebar' : 'Collapse Sidebar'}
           >
             {isSidebarCollapsed ? (
               <ChevronRight size={16} />
@@ -120,10 +122,10 @@ export default function Sidebar() {
           </button>
 
           {/* Profile Section */}
-          <div className={`mb-4 sm:mb-6 lg:mb-8 ${isSidebarCollapsed ? 'lg:hidden' : ''}`}>
+          <div className={`mb-3 sm:mb-6 lg:mb-6 ${isSidebarCollapsed ? 'lg:hidden' : ''}`}>
             <Link 
               href="/" 
-              className="flex items-center group transition-all duration-200 hover:scale-[1.02] space-x-2 sm:space-x-3" 
+              className="flex items-center group transition-all duration-200 hover:scale-[1.02] gap-2 sm:gap-3" 
               onClick={() => setIsMobileMenuOpen(false)}
             >
               <div className="relative">
@@ -145,7 +147,7 @@ export default function Sidebar() {
               </div>
             </Link>
             
-            <div className="mt-3 sm:mt-4 flex items-center px-2 py-1.5 sm:px-3 sm:py-2 rounded-lg sm:rounded-xl border space-x-1.5 sm:space-x-2" 
+            <div className="mt-3 sm:mt-4 flex items-center px-2 py-1.5 sm:px-3 sm:py-2 rounded-lg sm:rounded-xl border gap-1.5 sm:gap-2" 
                  style={{ 
                    backgroundColor: personalInfo.available ? 'rgba(16, 185, 129, 0.1)' : 'rgba(239, 68, 68, 0.1)',
                    borderColor: personalInfo.available ? 'rgba(16, 185, 129, 0.2)' : 'rgba(239, 68, 68, 0.2)'
@@ -159,32 +161,36 @@ export default function Sidebar() {
 
           {/* Collapsed Profile - Show only avatar when collapsed */}
           {isSidebarCollapsed && (
-            <div className="hidden lg:block mb-4 sm:mb-6 lg:mb-8">
+            <div className="hidden lg:block mb-3 mt-10">
               <Link 
                 href="/" 
-                className="flex justify-center group transition-all duration-200 hover:scale-110" 
+                className="flex justify-center group transition-all duration-200 hover:scale-110 relative" 
                 onClick={() => setIsMobileMenuOpen(false)}
-                title={personalInfo.name}
               >
+                {/* Tooltip for collapsed profile */}
+                <div className="absolute left-full ml-3 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-50 shadow-lg">
+                  {personalInfo.name}
+                  <div className="absolute right-full top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-transparent border-r-black"></div>
+                </div>
                 <div className="relative">
                   <Image
                     src="/me/1.png"
                     alt={personalInfo.name}
-                    width={40}
-                    height={40}
-                    className="w-10 h-10 rounded-lg object-cover shadow-lg transform group-hover:scale-105 transition-transform duration-200"
+                    width={32}
+                    height={32}
+                    className="w-8 h-8 rounded-lg object-cover shadow-lg transform group-hover:scale-105 transition-transform duration-200"
                   />
-                  <div className={`absolute -bottom-1 -right-1 w-3 h-3 rounded-full border-2 border-white ${personalInfo.available ? 'bg-emerald-500' : 'bg-red-500'}`}></div>
+                  <div className={`absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 rounded-full border border-white ${personalInfo.available ? 'bg-emerald-500' : 'bg-red-500'}`}></div>
                 </div>
               </Link>
             </div>
           )}
 
           {/* Search Section */}
-          <div className={`mb-4 sm:mb-6 ${isSidebarCollapsed ? 'lg:hidden' : ''}`}>
+          <div className={`mb-3 sm:mb-6 ${isSidebarCollapsed ? 'lg:hidden' : ''}`}>
             <button
               onClick={() => setIsSearchOpen(true)}
-              className="w-full flex items-center px-3 py-2 sm:px-4 sm:py-3 rounded-lg sm:rounded-xl transition-all duration-200 group hover:scale-[1.02] border space-x-2 sm:space-x-3"
+              className="w-full flex items-center px-3 py-2 sm:px-4 sm:py-3 rounded-lg sm:rounded-xl transition-all duration-200 group hover:scale-[1.02] border gap-2 sm:gap-3"
               style={{ 
                 backgroundColor: 'var(--secondary)', 
                 borderColor: 'var(--border)',
@@ -201,17 +207,17 @@ export default function Sidebar() {
                 e.currentTarget.style.color = 'var(--muted)'; 
               }}
             >
-              <SearchIcon size={16} className="sm:w-5 sm:h-5 flex-shrink-0 group-hover:scale-110 transition-transform duration-200" />
+              <SearchIcon size={18} className="sm:w-5 sm:h-5 flex-shrink-0 group-hover:scale-110 transition-transform duration-200" />
               <span className="font-semibold text-sm sm:text-base">{t('nav.search') || 'Search'}</span>
             </button>
           </div>
 
           {/* Collapsed Search */}
           {isSidebarCollapsed && (
-            <div className="hidden lg:block mb-4 sm:mb-6">
+            <div className="hidden lg:block mb-3">
               <button
                 onClick={() => setIsSearchOpen(true)}
-                className="w-full flex justify-center px-2 py-2 rounded-lg transition-all duration-200 group hover:scale-110 border"
+                className="w-full flex justify-center px-1.5 py-2.5 rounded-lg transition-all duration-200 group hover:scale-110 border relative"
                 style={{ 
                   backgroundColor: 'var(--secondary)', 
                   borderColor: 'var(--border)',
@@ -227,15 +233,19 @@ export default function Sidebar() {
                   e.currentTarget.style.borderColor = 'var(--border)'; 
                   e.currentTarget.style.color = 'var(--muted)'; 
                 }}
-                title={t('nav.search') || 'Search'}
               >
-                <SearchIcon size={16} className="group-hover:scale-110 transition-transform duration-200" />
+                {/* Tooltip for collapsed search */}
+                <div className="absolute left-full ml-3 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-50 shadow-lg">
+                  {t('nav.search') || 'Search'}
+                  <div className="absolute right-full top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-transparent border-r-black"></div>
+                </div>
+                <SearchIcon size={20} className="group-hover:scale-110 transition-transform duration-200" />
               </button>
             </div>
           )}
 
           {/* Navigation */}
-          <nav className="flex-1 space-y-1.5 sm:space-y-2">
+          <nav className="flex-1 space-y-1 sm:space-y-2">
             {navigationItems.map((item) => {
               const Icon = item.icon;
               const isActive = pathname === item.href || 
@@ -248,8 +258,8 @@ export default function Sidebar() {
                   onClick={() => setIsMobileMenuOpen(false)}
                   className={`flex items-center transition-all duration-200 group relative overflow-hidden hover:scale-[1.02] ${
                     isSidebarCollapsed 
-                      ? 'lg:justify-center lg:px-2 lg:py-3 px-3 py-2.5 sm:px-4 sm:py-3'
-                      : 'px-3 py-2.5 sm:px-4 sm:py-3 space-x-2 sm:space-x-3'
+                      ? 'lg:justify-center lg:px-1.5 lg:py-2.5 px-3 py-2.5 sm:px-4 sm:py-3'
+                      : 'px-3 py-2.5 sm:px-4 sm:py-3 gap-2 sm:gap-3'
                   } rounded-lg sm:rounded-xl`}
                   style={{ 
                     backgroundColor: isActive ? 'var(--primary-soft)' : 'transparent', 
@@ -270,15 +280,25 @@ export default function Sidebar() {
                       e.currentTarget.style.borderColor = 'transparent';
                     } 
                   }}
-                  title={isSidebarCollapsed ? item.label : undefined}
                 >
+                  {/* Tooltip for collapsed navigation */}
+                  {isSidebarCollapsed && (
+                    <div className="absolute left-full ml-3 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-50 shadow-lg">
+                      {item.label}
+                      <div className="absolute right-full top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-transparent border-r-black"></div>
+                    </div>
+                  )}
+                  
                   {isActive && !isSidebarCollapsed && (
                     <div 
                       className="absolute top-0 bottom-0 left-0 w-1 rounded-r-full"
                       style={{ backgroundColor: 'var(--primary)' }}
                     />
                   )}
-                  <Icon size={16} className="sm:w-5 sm:h-5 flex-shrink-0 transition-transform duration-200 ${isActive ? 'scale-110' : 'group-hover:scale-110'}" />
+                  <Icon 
+                    size={isSidebarCollapsed ? 20 : 16} 
+                    className={`${isSidebarCollapsed ? 'sm:w-5 sm:h-5' : 'sm:w-5 sm:h-5'} flex-shrink-0 transition-transform duration-200 ${isActive ? 'scale-110' : 'group-hover:scale-110'}`} 
+                  />
                   {!isSidebarCollapsed && (
                     <>
                       <span className="font-semibold text-sm sm:text-base">{item.label}</span>
@@ -288,7 +308,7 @@ export default function Sidebar() {
                     </>
                   )}
                   {isSidebarCollapsed && isActive && (
-                    <div className="hidden lg:block absolute -right-1 top-1/2 transform -translate-y-1/2 w-1 h-6 rounded-l-full" style={{ backgroundColor: 'var(--primary)' }} />
+                    <div className="hidden lg:block absolute -right-0.5 top-1/2 transform -translate-y-1/2 w-0.5 h-6 rounded-l-full" style={{ backgroundColor: 'var(--primary)' }} />
                   )}
                 </Link>
               );
@@ -296,14 +316,14 @@ export default function Sidebar() {
           </nav>
 
           {/* Theme and Language Controls */}
-          <div className="mt-4 sm:mt-6">
+          <div className="mt-3 sm:mt-6">
             {/* Theme and Language Toggle */}
-            <div className="mb-4 sm:mb-6">
-              <div className={`flex items-center gap-2 sm:gap-3 ${isSidebarCollapsed ? 'lg:flex-col lg:gap-3' : 'justify-center'}`}>
+            <div className="mb-3 sm:mb-6">
+              <div className={`flex items-center gap-1.5 sm:gap-3 ${isSidebarCollapsed ? 'lg:flex-col lg:gap-2' : 'justify-center'}`}>
                 {/* Theme Toggle */}
                 <button
                   onClick={toggleTheme}
-                  className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg flex items-center justify-center transition-all duration-200 hover:scale-110 hover:shadow-lg"
+                  className={`${isSidebarCollapsed ? 'w-10 h-10 sm:w-11 sm:h-11' : 'w-10 h-10 sm:w-12 sm:h-12'} rounded-lg flex items-center justify-center transition-all duration-200 hover:scale-110 hover:shadow-lg relative group`}
                   style={{ 
                     backgroundColor: 'var(--secondary)',
                     color: 'var(--muted)'
@@ -316,19 +336,25 @@ export default function Sidebar() {
                     e.currentTarget.style.backgroundColor = 'var(--secondary)';
                     e.currentTarget.style.color = 'var(--muted)';
                   }}
-                  title={themeMode === 'dark' ? t('theme.lightMode') || 'Light Mode' : t('theme.darkMode') || 'Dark Mode'}
                 >
+                  {/* Tooltip for collapsed theme toggle */}
+                  {isSidebarCollapsed && (
+                    <div className="absolute left-full ml-3 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-50 shadow-lg">
+                      {themeMode === 'dark' ? t('theme.lightMode') || 'Light Mode' : t('theme.darkMode') || 'Dark Mode'}
+                      <div className="absolute right-full top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-transparent border-r-black"></div>
+                    </div>
+                  )}
                   {themeMode === 'dark' ? (
-                    <Sun size={16} className="sm:w-5 sm:h-5" />
+                    <Sun size={isSidebarCollapsed ? 18 : 16} className={`${isSidebarCollapsed ? 'sm:w-5 sm:h-5' : 'sm:w-5 sm:h-5'}`} />
                   ) : (
-                    <Moon size={16} className="sm:w-5 sm:h-5" />
+                    <Moon size={isSidebarCollapsed ? 18 : 16} className={`${isSidebarCollapsed ? 'sm:w-5 sm:h-5' : 'sm:w-5 sm:h-5'}`} />
                   )}
                 </button>
 
                 {/* Language Toggle */}
                 <button
                   onClick={() => setLanguage(language === 'en' ? 'ar' : 'en')}
-                  className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg flex items-center justify-center transition-all duration-200 hover:scale-110 hover:shadow-lg text-xs sm:text-sm font-bold"
+                  className={`${isSidebarCollapsed ? 'w-10 h-10 sm:w-11 sm:h-11 text-sm sm:text-base' : 'w-10 h-10 sm:w-12 sm:h-12 text-xs sm:text-sm'} rounded-lg flex items-center justify-center transition-all duration-200 hover:scale-110 hover:shadow-lg font-bold relative group`}
                   style={{ 
                     backgroundColor: 'var(--secondary)',
                     color: 'var(--muted)'
@@ -341,18 +367,24 @@ export default function Sidebar() {
                     e.currentTarget.style.backgroundColor = 'var(--secondary)';
                     e.currentTarget.style.color = 'var(--muted)';
                   }}
-                  title={language === 'en' ? t('language.arabic') : t('language.english')}
                 >
+                  {/* Tooltip for collapsed language toggle */}
+                  {isSidebarCollapsed && (
+                    <div className="absolute left-full ml-3 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-50 shadow-lg">
+                      {language === 'en' ? 'Arabic' : 'English'}
+                      <div className="absolute right-full top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-transparent border-r-black"></div>
+                    </div>
+                  )}
                   {language === 'en' ? 'ع' : 'EN'}
                 </button>
               </div>
             </div>
 
             {/* Enhanced Footer */}
-            <div className={`pt-4 sm:pt-6 border-t ${isSidebarCollapsed ? 'lg:hidden' : ''}`} style={{ borderColor: 'var(--border)' }}>
+            <div className={`pt-3 sm:pt-6 border-t ${isSidebarCollapsed ? 'lg:hidden' : ''}`} style={{ borderColor: 'var(--border)' }}>
               {/* Social Links */}
-              <div className="mb-4 sm:mb-6">
-                <div className="flex items-center justify-center gap-2 sm:gap-3">
+              <div className="mb-3 sm:mb-6">
+                <div className="flex items-center justify-center gap-1.5 sm:gap-3">
                   {personalInfo.socialLinks.github && (
                     <a
                       href={personalInfo.socialLinks.github}
@@ -451,7 +483,7 @@ export default function Sidebar() {
               {/* Footer Details */}
               <div className="space-y-2 sm:space-y-3">
                 {/* Made by */}
-                <div className="flex items-center justify-center space-x-1">
+                <div className="flex items-center justify-center gap-1">
                   <span className="text-xs" style={{ color: 'var(--muted)' }}>
                     {t('footer.crafted') || 'Crafted with'}
                   </span>
@@ -479,6 +511,7 @@ export default function Sidebar() {
                 </div>
               </div>
             </div>
+
           </div>
         </div>
       </div>

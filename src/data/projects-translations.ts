@@ -96,7 +96,7 @@ export const projectsTranslations: Record<Language, ProjectTranslation[]> = {
     duration: "4 months",
     year: 2023,
     github: "https://github.com/abdallhx2/fruitAi",
-    featured: true,
+    featured: false,
     challenge: "Developing a tool that helps farmers make better decisions about harvest and fruit quality.",
     solution: "An application that uses artificial intelligence to analyze images and provide accurate instant information.",
     result: "Improved agricultural production efficiency and reduced crop waste.",
@@ -130,7 +130,30 @@ export const projectsTranslations: Record<Language, ProjectTranslation[]> = {
     solution: "A comprehensive application that tracks luggage and manages reports with an integrated control panel for teams.",
     result: "Improved pilgrim experience and saved time and effort for organizing teams.",
     technologies: ["GPS", "Next.js", "Real-time Database", "Firebase", "Google Maps"]
-  }
+  },
+  {
+  id: "efficiency",
+  title: "Efficiency Tools - Free Smart Utilities Platform",
+  description: "A completely free platform featuring 30+ daily tools, developed with Vue.js to provide zero-cost solutions. Includes URL shorteners, background removers, text extractors, speed tests, specialized calculators (BMI, age, date) and designer tools (color extractors, palette generators, font previewers). All tools are 100% free with no subscriptions or hidden fees, making it the ideal solution for developers, designers and general users.",
+  shortDescription: "Fully free all-in-one platform for daily utilities",
+  category: "Web Tools",
+  tags: ["Completely Free", "Vue.js", "Open Tools"],
+  image: "/projects/efficiency-tools/main_en.jpg",
+  gallery: [
+    "/projects/efficiency-tools/1_en.jpg",
+    "/projects/efficiency-tools/2_en.jpg",
+    "/projects/efficiency-tools/3_en.jpg",
+    "/projects/efficiency-tools/4_en.jpg"
+  ],
+  client: "Personal Project",
+  duration: "3 months",
+  year: 2024,
+  featured: true,
+  challenge: "Providing professional tools completely free as alternative to paid solutions",
+  solution: "Unified free platform replacing multiple paid services",
+  result: "Saved users thousands of dollars with unified experience",
+  technologies: ["Vue.js", "HTML5 Canvas", "Tesseract.js", "Web Workers"]
+}
    
   ],
   ar: [
@@ -153,7 +176,7 @@ export const projectsTranslations: Record<Language, ProjectTranslation[]> = {
     year: 2023,
    url: "https://an11one.netlify.app/",
     github: "https://github.com/abdallhx2/portofilo",
-    featured: true,
+    featured: false,
     challenge: "إنشاء تطبيق يعكس جودة العمل ويوفر تجربة تصفح مميزة عبر جميع الأجهزة.",
     solution: "تطوير تطبيق Flutter متجاوب مع تصميم جذاب وأقسام منظمة للمشاريع والمهارات.",
     result: "حصلت على منصة احترافية لعرض الأعمال وتحسين الانطباع المهني.",
@@ -235,7 +258,31 @@ export const projectsTranslations: Record<Language, ProjectTranslation[]> = {
     challenge: "حل مشكلة ضياع الحقائب وتيه الحجاج بطريقة تقنية فعالة.",
     solution: "تطبيق شامل يتتبع الحقائب ويدير البلاغات مع لوحة تحكم متكاملة للفرق.",
     result: "تحسين تجربة الحجاج وتوفير الوقت والجهد لفرق التنظيم.",
- technologies: ["GPS", "Next.js", "Real-time Database", "Firebase", "Google Maps"]  }
+ technologies: ["GPS", "Next.js", "Real-time Database", "Firebase", "Google Maps"] 
+ },
+ {
+  id: "efficiency-tools",
+  title: "كفاءة - منصة الأدوات المجانية",
+  description: "منصة مجانية بالكامل تضم أكثر من 30 أداة عملية يومية، تم تطويرها باستخدام Vue.js لتقديم حلول فورية دون أي تكلفة. تشمل أدوات لاختصار الروابط، إزالة خلفيات الصور، استخراج النصوص، قياس سرعة الإنترنت، حاسبات متخصصة (كمؤشر كتلة الجسم، العمر، تحويل التاريخ) وأدوات مصممين متقدمة (استخراج الألوان، توليد ألوان متناسقة، معاينة الخطوط). جميع الأدوات متاحة مجاناً بدون اشتراكات أو رسوم خفية، مما يجعلها الحل الأمثل للمطورين والمصممين والمستخدمين العاديين.",
+  shortDescription: "منصة مجانية متكاملة لأدوات المهام اليومية",
+  category: "أدوات الويب",
+  tags: ["مجانية بالكامل", "Vue.js", "أدوات مفتوحة"],
+  image: "/projects/efficiency-tools/main.jpg",
+  gallery: [
+    "/projects/efficiency-tools/1.jpg",
+    "/projects/efficiency-tools/2.jpg",
+    "/projects/efficiency-tools/3.jpg",
+    "/projects/efficiency-tools/4.jpg"
+  ],
+  client: "مشروع شخصي",
+  duration: "3 أشهر",
+  year: 2024,
+  featured: true,
+  challenge: "توفير أدوات احترافية مجانية بديلاً عن الحلول المدفوعة",
+  solution: "منصة موحدة مجانية تغني عن استخدام مواقع متعددة مدفوعة",
+  result: "توفير آلاف الدولارات على المستخدمين مع تجربة موحدة وسهلة",
+  technologies: ["Vue.js", "HTML5 Canvas", "Tesseract.js", "Web Workers"]
+}
 ]
 };
 

@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { ExternalLink, Cpu, Globe, Smartphone, Server, Code2, Brain, Database, Sun, Moon, Check, Github, Linkedin, Twitter, Instagram, Palette } from 'lucide-react';
+import { ExternalLink, Cpu, Globe, Smartphone, Server, Code2, Brain, Database, Sun, Moon, Check, Github, Linkedin, Twitter, Instagram, Palette, Calendar, Clock, Eye, Heart } from 'lucide-react';
 import { FadeIn, ScrollingTechStack, CountUp, StaggerChildren } from '@/components/Animations';
 import { useLanguage } from '@/context/LanguageContext';
 import { useTranslatedData } from '@/hooks/useTranslatedData';
@@ -37,20 +37,11 @@ export default function Home() {
 
             <FadeIn direction="up" delay={0.2} duration={0.8} threshold={0.2}>
               <h1 className={`text-5xl sm:text-5xl lg:text-6xl xl:text-7xl font-black leading-none tracking-tight animate-hero-slide-up`}>
-                {isRTL ? (
-                  // Arabic: Full name in one line with color distinction
-                  <span>
-                    <span style={{ color: 'var(--foreground)' }}>{personalInfo.name.split(' ')[0]} </span>
-                    <span style={{ color: 'var(--primary)' }}>{personalInfo.name.split(' ').slice(1).join(' ')}</span>
-                  </span>
-                ) : (
-                  // English: Split into two lines as before
-                  <>
-                    <span style={{ color: 'var(--foreground)' }}>{personalInfo.name.split(' ')[0]}</span>
-                    <br />
-                    <span style={{ color: 'var(--primary)' }}>{personalInfo.name.split(' ').slice(1).join(' ')}</span>
-                  </>
-                )}
+                {/* Both Arabic and English: Full name in one line with color distinction */}
+                <span>
+                  <span style={{ color: 'var(--foreground)' }}>{personalInfo.name.split(' ')[0]} </span>
+                  <span style={{ color: 'var(--primary)' }}>{personalInfo.name.split(' ').slice(1).join(' ')}</span>
+                </span>
               </h1>
             </FadeIn>
 
@@ -69,35 +60,35 @@ export default function Home() {
             </FadeIn>
 
             <FadeIn direction="up" delay={0.5}>
-              <StaggerChildren staggerDelay={0.3} className="flex flex-row justify-center items-center gap-4 sm:gap-8 lg:gap-16 py-8">
+              <StaggerChildren staggerDelay={0.1} className="flex flex-row justify-center items-center gap-4 sm:gap-8 lg:gap-16 py-8">
                 <div className="text-center">
-                  <div className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold mb-2" style={{ color: 'var(--foreground)' }}>
-                    <CountUp end={5} suffix="+" duration={1.2} />
+                  <div className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold mb-2 tabular-nums animate-counter" style={{ color: 'var(--foreground)' }}>
+                    <CountUp end={5} suffix="+" duration={2} />
                   </div>
                   <div className="text-xs sm:text-sm lg:text-base xl:text-lg" style={{ color: 'var(--muted-foreground)' }}>
                     {t('home.stats.experience') || 'سنوات خبرة'}
                   </div>
-                  <div className="w-12 h-1 bg-primary/20 rounded-full mx-auto mt-2"></div>
+                  <div className="w-12 h-0.5 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto mt-2"></div>
                 </div>
-                <div className="w-px h-8 sm:h-12 lg:h-16" style={{ backgroundColor: 'var(--border)' }} />
+                <div className="w-px h-8 sm:h-12 lg:h-16 bg-gradient-to-b from-transparent via-border to-transparent" />
                 <div className="text-center">
-                  <div className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold mb-2" style={{ color: 'var(--foreground)' }}>
-                    <CountUp end={37} suffix="+" duration={1.4} />
+                  <div className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold mb-2 tabular-nums animate-counter" style={{ color: 'var(--foreground)' }}>
+                    <CountUp end={37} suffix="+" duration={2.2} />
                   </div>
                   <div className="text-xs sm:text-sm lg:text-base xl:text-lg" style={{ color: 'var(--muted-foreground)' }}>
                     {t('home.stats.projects') || 'مشروع مكتمل'}
                   </div>
-                  <div className="w-12 h-1 bg-primary/20 rounded-full mx-auto mt-2"></div>
+                  <div className="w-12 h-0.5 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto mt-2"></div>
                 </div>
-                <div className="w-px h-8 sm:h-12 lg:h-16" style={{ backgroundColor: 'var(--border)' }} />
+                <div className="w-px h-8 sm:h-12 lg:h-16 bg-gradient-to-b from-transparent via-border to-transparent" />
                 <div className="text-center">
-                  <div className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold mb-2" style={{ color: 'var(--foreground)' }}>
-                    <CountUp end={76} suffix="+" duration={1.6} />
+                  <div className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold mb-2 tabular-nums animate-counter" style={{ color: 'var(--foreground)' }}>
+                    <CountUp end={76} suffix="+" duration={2.4} />
                   </div>
                   <div className="text-xs sm:text-sm lg:text-base xl:text-lg" style={{ color: 'var(--muted-foreground)' }}>
                     {t('home.stats.clients') || 'عميل سعيد'}
                   </div>
-                  <div className="w-12 h-1 bg-primary/20 rounded-full mx-auto mt-2"></div>
+                  <div className="w-12 h-0.5 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto mt-2"></div>
                 </div>
               </StaggerChildren>
             </FadeIn>
@@ -117,51 +108,51 @@ export default function Home() {
             </FadeIn>
 
             <FadeIn direction="up" delay={0.7} duration={0.6}>
-              <StaggerChildren staggerDelay={0.1} className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 pt-6 sm:pt-8 px-4 sm:px-0">
+              <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 pt-6 sm:pt-8 px-4 sm:px-0">
                 <Link href="/projects" 
-                      className="px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-sm sm:text-base text-white transition-all duration-300 hover:scale-105 hover:shadow-lg text-center group"
+                      className="px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-sm sm:text-base text-white transition-all duration-200 hover:opacity-90 text-center"
                       style={{ backgroundColor: 'var(--primary)' }}>
-                  <span className="group-hover:animate-pulse">{t('home.hero.viewProjects') || 'استعرض أعمالي'}</span>
+                  {t('home.hero.viewProjects') || 'استعرض أعمالي'}
                 </Link>
                 <Link href="/contact" 
-                      className="px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-sm sm:text-base border transition-all duration-300 hover:scale-105 hover:shadow-lg text-center group"
-                      style={{ borderColor: 'var(--border)', color: 'var(--foreground)' }}>
-                  <span className="group-hover:animate-pulse">{t('home.hero.getInTouch') || 'تواصل معي'}</span>
+                      className="px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-sm sm:text-base border transition-all duration-200 hover:bg-card text-center"
+                      style={{ borderColor: 'var(--border)', color: 'var(--foreground)', backgroundColor: 'transparent' }}>
+                  {t('home.hero.getInTouch') || 'تواصل معي'}
                 </Link>
-              </StaggerChildren>
+              </div>
             </FadeIn>
 
             <FadeIn direction="up" delay={0.8} duration={0.6}>
-              <StaggerChildren staggerDelay={0.1} className="flex justify-center items-center space-x-3 sm:space-x-4 pt-6 sm:pt-8">
+              <div className="flex justify-center items-center space-x-3 sm:space-x-4 pt-6 sm:pt-8">
                 {personalInfo.socialLinks.github && (
                   <Link href={personalInfo.socialLinks.github} target="_blank" rel="noopener noreferrer"
-                        className="p-2 sm:p-3 rounded-full border transition-all duration-300 hover:scale-110 hover:shadow-lg group"
+                        className="p-2 sm:p-3 rounded-full border transition-all duration-200 hover:border-primary hover:text-primary"
                         style={{ borderColor: 'var(--border)', color: 'var(--muted-foreground)' }}>
-                    <Github size={16} className="sm:w-5 sm:h-5 group-hover:animate-bounce" />
+                    <Github size={16} className="sm:w-5 sm:h-5" />
                   </Link>
                 )}
                 {personalInfo.socialLinks.linkedin && (
                   <Link href={personalInfo.socialLinks.linkedin} target="_blank" rel="noopener noreferrer"
-                        className="p-2 sm:p-3 rounded-full border transition-all duration-300 hover:scale-110 hover:shadow-lg group"
+                        className="p-2 sm:p-3 rounded-full border transition-all duration-200 hover:border-primary hover:text-primary"
                         style={{ borderColor: 'var(--border)', color: 'var(--muted-foreground)' }}>
-                    <Linkedin size={16} className="sm:w-5 sm:h-5 group-hover:animate-bounce" />
+                    <Linkedin size={16} className="sm:w-5 sm:h-5" />
                   </Link>
                 )}
                 {personalInfo.socialLinks.twitter && (
                   <Link href={personalInfo.socialLinks.twitter} target="_blank" rel="noopener noreferrer"
-                        className="p-2 sm:p-3 rounded-full border transition-all duration-300 hover:scale-110 hover:shadow-lg group"
+                        className="p-2 sm:p-3 rounded-full border transition-all duration-200 hover:border-primary hover:text-primary"
                         style={{ borderColor: 'var(--border)', color: 'var(--muted-foreground)' }}>
-                    <Twitter size={16} className="sm:w-5 sm:h-5 group-hover:animate-bounce" />
+                    <Twitter size={16} className="sm:w-5 sm:h-5" />
                   </Link>
                 )}
                 {personalInfo.socialLinks.instagram && (
                   <Link href={personalInfo.socialLinks.instagram} target="_blank" rel="noopener noreferrer"
-                        className="p-2 sm:p-3 rounded-full border transition-all duration-300 hover:scale-110 hover:shadow-lg group"
+                        className="p-2 sm:p-3 rounded-full border transition-all duration-200 hover:border-primary hover:text-primary"
                         style={{ borderColor: 'var(--border)', color: 'var(--muted-foreground)' }}>
-                    <Instagram size={16} className="sm:w-5 sm:h-5 group-hover:animate-bounce" />
+                    <Instagram size={16} className="sm:w-5 sm:h-5" />
                   </Link>
                 )}
-              </StaggerChildren>
+              </div>
             </FadeIn>
           </div>
         </section>
@@ -537,43 +528,90 @@ export default function Home() {
             </div>
             
             {/* Projects Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-6 sm:mb-8 lg:mb-12">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-6 sm:mb-8 lg:mb-12">
               {featuredProjects.slice(0, language === 'ar' ? 3 : 6).map((project) => (
-                <Link key={project.id} href={`/projects/${project.id}`} 
-                      className="group block p-4 sm:p-6 rounded-lg sm:rounded-xl border hover:scale-105 hover:shadow-lg transition-all duration-300" 
-                      style={{ backgroundColor: 'var(--card)', borderColor: 'var(--border)' }}>
-                  
+                <div key={project.id} className="card overflow-hidden group" style={{ backgroundColor: 'var(--card)', border: '1px solid var(--border)' }}>
                   {/* Project Image */}
-                  <div className="aspect-video relative rounded-md sm:rounded-lg mb-4 sm:mb-6 overflow-hidden">
+                  <div className="aspect-video relative border-b" style={{ borderColor: 'var(--border)' }}>
                     <Image
                       src={project.image}
                       alt={project.title}
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-300"
                     />
+                    {project.featured && (
+                      <div className="absolute top-3 right-3 text-white text-xs px-2 py-1 rounded-full font-medium" style={{ backgroundColor: 'var(--primary)' }}>
+                        Featured
+                      </div>
+                    )}
                   </div>
-                  
+
                   {/* Project Content */}
-                  <div className="space-y-2 sm:space-y-3">
-                    <h3 className="font-semibold text-sm sm:text-base lg:text-lg group-hover:text-opacity-80 transition-colors" 
-                        style={{ color: 'var(--foreground)' }}>
-                      {project.title}
-                    </h3>
-                    <p className="text-xs sm:text-sm lg:text-base line-clamp-3" style={{ color: 'var(--muted-foreground)' }}>
+                  <div className="p-6">
+                    <div className="flex items-start justify-between mb-3">
+                      <div>
+                        <h3 className="font-semibold mb-1 group-hover:transition-colors" style={{ color: 'var(--foreground)' }}>
+                          {project.title}
+                        </h3>
+                        <p className="text-sm" style={{ color: 'var(--muted-foreground)' }}>{project.client} • {project.year}</p>
+                      </div>
+                      <span className="text-xs px-2 py-1 rounded-full font-medium" style={{ backgroundColor: 'var(--primary)/10', color: 'var(--primary)' }}>
+                        {project.category}
+                      </span>
+                    </div>
+
+                    <p className="text-sm mb-4 line-clamp-2" style={{ color: 'var(--muted-foreground)' }}>
                       {project.shortDescription}
                     </p>
-                    
-                    {/* Project Tags */}
-                    <div className="flex flex-wrap gap-1 sm:gap-2 pt-1 sm:pt-2">
+
+                    {/* Tags */}
+                    <div className="flex flex-wrap gap-1 mb-4">
                       {project.tags.slice(0, 3).map((tag, index) => (
-                        <span key={index} className="text-xs px-2 py-1 rounded-md border" 
-                              style={{  color: 'var(--muted-foreground)', borderColor: 'var(--border)' }}>
+                        <span key={index} className="text-xs px-2 py-1 rounded" style={{ backgroundColor: 'var(--background)', color: 'var(--muted-foreground)' }}>
                           {tag}
                         </span>
                       ))}
+                      {project.tags.length > 3 && (
+                        <span className="text-xs" style={{ color: 'var(--muted-foreground)' }}>+{project.tags.length - 3} more</span>
+                      )}
+                    </div>
+
+                    {/* Actions */}
+                    <div className="flex items-center gap-3 pt-3" style={{ borderTop: '1px solid var(--border)' }}>
+                      <Link 
+                        href={`/projects/${project.id}`}
+                        className="flex-1 text-white text-sm py-2 px-3 rounded-lg transition-colors text-center font-medium hover:opacity-90"
+                        style={{ backgroundColor: 'var(--primary)' }}
+                      >
+                        View Details
+                      </Link>
+                      {project.url && (
+                        <a 
+                          href={project.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="p-2 transition-colors hover:text-primary"
+                          style={{ color: 'var(--muted-foreground)' }}
+                          title="Live Demo"
+                        >
+                          <ExternalLink size={16} />
+                        </a>
+                      )}
+                      {project.github && (
+                        <a 
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="p-2 transition-colors hover:text-primary"
+                          style={{ color: 'var(--muted-foreground)' }}
+                          title="GitHub Repository"
+                        >
+                          <Github size={16} />
+                        </a>
+                      )}
                     </div>
                   </div>
-                </Link>
+                </div>
               ))}
             </div>
             
@@ -602,41 +640,134 @@ export default function Home() {
             </div>
             
             {/* Blog Posts Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-6 sm:mb-8 lg:mb-12">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-6 sm:mb-8 lg:mb-12">
               {featuredBlogPosts.slice(0, language === 'ar' ? 3 : 6).map((post) => (
-                <Link key={post.id} href={`/blog/${post.id}`} 
-                      className="group block p-4 sm:p-6 rounded-lg sm:rounded-xl border hover:scale-105 hover:shadow-lg transition-all duration-300" 
-                      style={{ backgroundColor: 'var(--card)', borderColor: 'var(--border)' }}>
-                  
-                  {/* Blog Image */}
-                  <div className="aspect-video bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-900 dark:to-purple-900 rounded-md sm:rounded-lg mb-4 sm:mb-6 overflow-hidden">
-                    <div className="w-full h-full flex items-center justify-center">
-                      <span className="text-2xl sm:text-3xl opacity-50">📝</span>
-                    </div>
-                  </div>
-                  
-                  {/* Blog Content */}
-                  <div className="space-y-2 sm:space-y-3">
-                    <h3 className="font-semibold text-sm sm:text-base lg:text-lg group-hover:text-opacity-80 transition-colors" 
-                        style={{ color: 'var(--foreground)' }}>
-                      {post.title}
-                    </h3>
-                    <p className="text-xs sm:text-sm lg:text-base line-clamp-3" style={{ color: 'var(--muted-foreground)' }}>
-                      {post.excerpt}
-                    </p>
-                    
-                    {/* Blog Meta */}
-                    <div className="flex items-center justify-between pt-1 sm:pt-2">
-                      <div className="flex items-center text-xs sm:text-sm" style={{ color: 'var(--muted-foreground)' }}>
-                        <span>{post.readTime} min read</span>
+                <div 
+                  key={post.id} 
+                  className="card overflow-hidden group transition-all duration-300 hover:shadow-lg hover:-translate-y-1" 
+                  style={{ 
+                    backgroundColor: 'var(--card)', 
+                    border: '1px solid var(--border)',
+                    boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.1)'
+                  }}
+                >
+                  {/* Post Image */}
+                  <div className="aspect-video relative border-b" style={{ borderColor: 'var(--border)' }}>
+                    {post.image ? (
+                      <Image
+                        src={post.image}
+                        alt={post.title}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                    ) : (
+                      <div className="w-full h-full bg-gradient-to-br from-purple-500/10 via-blue-500/10 to-cyan-500/10 flex items-center justify-center">
+                        <span className="text-lg font-medium" style={{ color: 'var(--muted-foreground)' }}>
+                          {post.category}
+                        </span>
                       </div>
-                      <span className="text-xs px-2 py-1 rounded-md border" 
-                            style={{  color: 'var(--muted-foreground)', borderColor: 'var(--border)' }}>
+                    )}
+                    
+                    {/* Featured Badge */}
+                    {post.featured && (
+                      <div className="absolute top-3 right-3">
+                        <span className="px-2 py-1 text-white text-xs rounded-full font-medium" style={{ backgroundColor: 'var(--primary)' }}>
+                          Featured
+                        </span>
+                      </div>
+                    )}
+                    
+                    {/* Category Badge */}
+                    <div className="absolute bottom-3 left-3">
+                      <span 
+                        className="px-2 py-1 rounded text-xs font-medium" 
+                        style={{ backgroundColor: 'var(--primary)/10', color: 'var(--primary)' }}
+                      >
                         {post.category}
                       </span>
                     </div>
                   </div>
-                </Link>
+
+                  {/* Post Content */}
+                  <div className="p-6">
+                    {/* Date and Reading Time */}
+                    <div className="flex items-center justify-between mb-3">
+                      <div className="flex items-center gap-2 text-xs" style={{ color: 'var(--muted-foreground)' }}>
+                        <Calendar size={12} />
+                        <span>{new Date(post.publishedAt).toLocaleDateString(language === 'ar' ? 'ar-SA' : 'en-US', {
+                          year: 'numeric',
+                          month: 'long',
+                          day: 'numeric'
+                        })}</span>
+                      </div>
+                      <div className="flex items-center gap-1 text-xs" style={{ color: 'var(--muted-foreground)' }}>
+                        <Clock size={12} />
+                        <span>{post.readingTime || (post.readTime ? `${post.readTime} min` : 'N/A')}</span>
+                      </div>
+                    </div>
+
+                    {/* Title */}
+                    <h3 
+                      className="font-semibold mb-2 group-hover:transition-colors line-clamp-2" 
+                      style={{ color: 'var(--foreground)' }}
+                    >
+                      {post.title}
+                    </h3>
+
+                    {/* Excerpt */}
+                    <p 
+                      className="text-sm mb-4 line-clamp-3" 
+                      style={{ color: 'var(--muted-foreground)' }}
+                    >
+                      {post.excerpt}
+                    </p>
+
+                    {/* Author and Meta */}
+                    <div className="flex items-center justify-between pt-4" style={{ borderTop: '1px solid var(--border)' }}>
+                      {/* Author */}
+                      <div className="flex items-center gap-2">
+                        <div 
+                          className="w-8 h-8 rounded-full flex items-center justify-center text-white text-xs font-semibold"
+                          style={{ backgroundColor: 'var(--primary)' }}
+                        >
+                          {typeof post.author === 'string' ? post.author.charAt(0) : post.author.name.charAt(0)}
+                        </div>
+                        <div>
+                          <p className="text-xs font-medium" style={{ color: 'var(--foreground)' }}>
+                            {typeof post.author === 'string' ? post.author : post.author.name}
+                          </p>
+                        </div>
+                      </div>
+
+                      {/* Engagement */}
+                      <div className="flex items-center gap-3 text-xs" style={{ color: 'var(--muted-foreground)' }}>
+                        <span className="flex items-center gap-1">
+                          <Eye size={12} />
+                          {post.views ? post.views.toLocaleString() : '0'}
+                        </span>
+                        <span className="flex items-center gap-1">
+                          <Heart size={12} />
+                          {post.likes || '0'}
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Read More Button */}
+                    <div className="mt-4">
+                      <Link 
+                        href={`/blog/${post.slug || post.id}`}
+                        className="w-full text-center font-medium block py-2 px-4 rounded-lg transition-all duration-300 transform hover:scale-[1.02] hover:bg-primary hover:text-white"
+                        style={{
+                          backgroundColor: 'transparent',
+                          color: 'var(--primary)',
+                          border: '1px solid var(--border)'
+                        }}
+                      >
+                        Read Article
+                      </Link>
+                    </div>
+                  </div>
+                </div>
               ))}
             </div>
             

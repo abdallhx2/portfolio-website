@@ -100,7 +100,7 @@ export const personalInfoTranslations: Record<Language, PersonalInfoTranslation>
     poetryAuthor: "Al-Mutanabbi",
     shortBio: "developer applications and websites and build technical solutions powered by artificial intelligence, making a difference and reducing effort and time with the highest quality standards and best results.",
     email: "3bdallhx2@gmail.com",
-    phone: "0542002960",
+    phone: "0544146288",
     location: "Makkah - Riyadh, Saudi Arabia",
     available: true,
     socialLinks: {
@@ -120,7 +120,7 @@ export const personalInfoTranslations: Record<Language, PersonalInfoTranslation>
     poetryAuthor: "المتنبي",
     shortBio: "أطوّر تطبيقات ومواقع وأبني حلولًا تقنية مدعومة بالذكاء الاصطناعي، تحدث الفرق وتقلل الجهد والوقت بأعلى معاير الجودة وافضل النتائج",
     email: "3bdallhx2@gmail.com",
-    phone: "0542002960",
+    phone: "0544146288",
     location: "مكة المكرمة - الرياض، المملكة العربية السعودية",
     available: true,
        socialLinks: {

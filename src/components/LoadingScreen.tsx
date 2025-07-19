@@ -40,7 +40,7 @@ export default function LoadingScreen() {
             <div className="absolute inset-0 rounded-full border-4 border-white border-t-transparent animate-spin opacity-40"></div>
             
             <span className="relative z-10 animate-pulse text-2xl">
-              HB
+              AN
             </span>
           </div>
         </div>

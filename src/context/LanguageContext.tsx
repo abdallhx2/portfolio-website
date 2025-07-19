@@ -29,9 +29,8 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
       
       setLanguage(initialLanguage);
       
-      // Set direction based on language
-      const direction = initialLanguage === 'ar' ? 'rtl' : 'ltr';
-      document.documentElement.dir = direction;
+      // Keep direction as LTR always
+      document.documentElement.dir = 'ltr';
       document.documentElement.lang = initialLanguage;
     }
   }, []);
@@ -46,9 +45,8 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
     setLanguage(lang);
     if (typeof window !== 'undefined') {
       localStorage.setItem('language', lang);
-      // Set direction based on language
-      const direction = lang === 'ar' ? 'rtl' : 'ltr';
-      document.documentElement.dir = direction;
+      // Keep direction as LTR always
+      document.documentElement.dir = 'ltr';
       document.documentElement.lang = lang;
     }
     
@@ -77,7 +75,7 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
       value={{
         language,
         setLanguage: handleLanguageChange,
-        isRTL: language === 'ar',
+        isRTL: false, // Always LTR for layout stability
         t,
         isLanguageChanging,
       }}
