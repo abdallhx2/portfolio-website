@@ -21,7 +21,6 @@ Experience the portfolio live and see all features in action:
 | Version | Link | Description |
 |---------|------|-------------|
 | 🌐 **Live Website** | [Visit Portfolio](https://abdallhx2-portfolio.vercel.app) | Full production version |
-| 📱 **Mobile Preview** | [Mobile View](https://abdallhx2-portfolio.vercel.app) | Optimized for mobile devices |
 | 🔍 **GitHub Repository** | [Source Code](https://github.com/abdallhx2/portfolio-website) | View and clone the source |
 
 ### **✨ What to Try | ما يمكن تجربته**
